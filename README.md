@@ -1,59 +1,59 @@
-# final_project
+# Project Name: ICP Bootcamp Final Project - Help Bridge
 
-Welcome to your new final_project project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Overview
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+This repository contains the final project developed as part of the ICP (Introduction to Computer Programming) Bootcamp. The project focuses on implementing a registry service to manage registrations and assistance requests for individuals in need.
 
-To learn more before you start working with final_project, see the following documentation available online:
+## Project Components
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+- **Registry Actor:** The core functionality is encapsulated within an actor named Registry. This actor manages the registration process and handles assistance requests.
+- **Data Types:** Two main data types are defined: Person and Request, representing individuals and their assistance requests, respectively.
+- **Registration Process:** Provides a method to register individuals with relevant information such as name, surname, and reason for assistance.
+- **Listing Registered Persons:** Offers functionality to retrieve lists of registered persons and those who have received assistance.
+- **Sending Help:** Allows the administration to mark assistance requests as fulfilled and specify the assistance amount provided.
 
-If you want to start working on your project right away, you might want to try the following commands:
+## Getting Started
 
-```bash
-cd final_project/
-dfx help
-dfx canister --help
-```
+To set up the project locally and begin using the registry service, follow these steps:
 
-## Running the project locally
+**1. Clone the Repository:** Clone this repository to your local machine using the following command:
+  git clone (https://github.com/ertanurak/ICP-Bootcamp-Final-Project.git)
+  
+**2. Install Dependencies:** Ensure you have all necessary dependencies installed. The project may require a specific programming environment or dependencies that need to be installed. Please refer to the project documentation for detailed instructions.
 
-If you want to test your project locally, you can use the following commands:
+**3. Build and Run:** After setting up the environment and dependencies, build and run the project according to the provided instructions.
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
+## Usage
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+The registry service provides the following functionalities:
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+**Registration:** Register individuals by providing their name, surname, Turkish ID number (tcNo), and reason for assistance.
+**Listing Registered Persons:** Retrieve a list of registered persons who are currently seeking assistance.
+**Listing Helped Persons:** Retrieve a list of persons who have received assistance.
+**Sending Help:** Mark assistance requests as fulfilled by specifying the amount of assistance provided.
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+## Contributing
 
-```bash
-npm run generate
-```
+Contributions to the project are welcome! To contribute, please follow these guidelines:
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+1.Fork the repository.
+2.Create a new branch for your feature or bug fix.
+3.Make your changes and ensure the code passes all tests.
+4.Commit your changes with descriptive commit messages.
+5.Push your branch to your fork.
+6.Submit a pull request with a detailed explanation of your changes.
 
-If you are making frontend changes, you can start a development server with
+## Contact
 
-```bash
-npm start
-```
+For any inquiries or assistance regarding the project, feel free to contact:
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+Ertan URAK
+ertanurak@gmail.com
 
-### Note on frontend environment variables
+## Acknowledgments
 
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
+Special thanks to the ICP Bootcamp instructors and organizers for providing guidance and support throughout the duration of the bootcamp.
 
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+## Disclaimer
+
+This project is developed for educational purposes and may contain experimental or incomplete features. Use it at your own risk.
